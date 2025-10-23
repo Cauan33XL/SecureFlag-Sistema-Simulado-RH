@@ -49,15 +49,41 @@ button {
 </head>    
 <body>    
     <center> <h1> Sistema de RH </h1> </center>   
-    <form action='action=registrar.html' method="get">  
-        <div class="container">   
-            <label>Usuário: </label>   
-            <input type="text" placeholder="Nome de usuário" name="username" required>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Senha de acesso" name="password" required>  
-            <button type="submit">Login</button>   
-        </div>   
-    </form>
+ <form id="loginForm">  
+    <div class="container">   
+      <label>Usuário: </label>   
+      <input type="text" placeholder="Nome de usuário" id="email" required>  
+
+      <label>Senha : </label>   
+      <input type="password" placeholder="Senha de acesso" id="senha" required>  
+
+      <button type="submit">Login</button>   
+      <p class="erro" id="erro"></p>
+    </div>   
+  </form>
     <!--//TODO:Precisamos melhorar a action de listar registros SecureFlag{CaiuNaRedeÉPeixe} -->
+
+    <script>
+    const emailCorreto = "sebastiao.santos@yaldabaothbank.com";
+    const senhaCorreta = "kRzM36SU9e";
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Impede o envio real do form
+      
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+      const erro = document.getElementById("erro");
+
+      if (email === emailCorreto && senha === senhaCorreta) {
+        // Armazena o nome do usuário (opcional)
+        localStorage.setItem("usuario", email);
+        // Redireciona sem mostrar nada na URL
+        window.location.href = "action=registrar.html";
+      } else {
+        erro.textContent = "Email ou senha incorretos!";
+      }
+    });
+  </script>
+
 </body>
 </html>
