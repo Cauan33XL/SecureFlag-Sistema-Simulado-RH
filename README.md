@@ -812,7 +812,7 @@ Prof. Rômulo Valadares - UNICEPLAC
 - Reverse Engineering
 - Network Analysis
 
-### Bibliographic References
+### Bibliographic References 
 1. CTFTIME - CTF events and structure
 2. HackerSec - Hacker challenge fundamentals
 3. UNB Cybersecurity Club - Teaching methodologies
